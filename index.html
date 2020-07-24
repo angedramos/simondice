@@ -137,11 +137,11 @@
         }
 
         ganoElJuego(){
-          swal ("Platzi", "Felicitaciones, Ganaste el juego","success")
+          swal ("Platzi", "Felicitaciones, Ganaste el juego :D","success")
           .then(this.inicializar)
         }
         perdioElJuego(){
-          swal ("Platzi", "Que mal, Perdiste el juego :(","error")
+          swal ("Platzi", "Que mal, Perdiste el juego en el nivel "+this.nivel+" :(","error")
           .then(() => {
             this.eliminarEventosClick()
             this.inicializar()
@@ -154,5 +154,6 @@
         var juego = new Juego()
       }
     </script>
+
   </body>
 </html>
