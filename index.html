@@ -4,7 +4,10 @@
     <meta charset="utf-8">
     <title> Simon Dice</title>
     <link rel="stylesheet" href="game/style/styles.css">
+    <link rel="stylesheet" href="game/style/mobile.css">
+    <link rel="stylesheet" href="game/style/normalize.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
   </head>
   <body>
     <div class="gameboard">
@@ -21,15 +24,15 @@
       const naranja = document.getElementById('naranja')
       const verde = document.getElementById('verde')
       const btnEmpezar = document.getElementById('btnEmpezar')
-      const ULTIMO_NIVEL = 8
-      swal ("Hola, este es un simple juego de 'Simon Dice'", "El juego consta de 8 niveles... ¡Buena Suerte!" ,"success")
+      const ULTIMO_NIVEL = 20
+      swal ("Hola, este es un simple juego de 'Simon Dice'", "El juego consta de "+ULTIMO_NIVEL+" niveles... ¡Buena Suerte!" ,"success")
 
       class Juego {
         constructor(){
           this.inicializar = this.inicializar.bind(this)
           this.inicializar()
           this.generarSecuencia()
-          setTimeout(this.siguienteNivel,400)
+          setTimeout(this.siguienteNivel,200)
 
         }
 
@@ -100,7 +103,7 @@
           //Iluminar los colores
            this.colores[color].classList.add('light')
            //apagar (para que de el efecto del parpadeo)
-           setTimeout(() => this.apagarColor(color),350)//350 milisegundos
+           setTimeout(() => this.apagarColor(color),300)//300 milisegundos
         }
         apagarColor(color){
           this.colores[color].classList.remove('light')
@@ -129,7 +132,7 @@
               if (this.nivel === (ULTIMO_NIVEL + 1)) {
                 this.ganoElJuego()
               }else {
-                setTimeout(this.siguienteNivel,1500)
+                setTimeout(this.siguienteNivel,1000)
               }
             }
           }else {
@@ -138,11 +141,11 @@
         }
 
         ganoElJuego(){
-          swal ("Platzi", "Felicitaciones, Ganaste el juego :D","success")
+          swal ("You Won", "Me Impresionas, Felicidades :D","success")
           .then(this.inicializar)
         }
         perdioElJuego(){
-          swal ("Platzi", "Que mal, Perdiste el juego en el nivel "+this.nivel+" :(","error")
+          swal ("Game Over", "Que mal, Perdiste el juego en el nivel "+this.nivel+" :(","error")
           .then(() => {
             this.eliminarEventosClick()
             this.inicializar()
