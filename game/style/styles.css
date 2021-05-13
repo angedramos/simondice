@@ -33,38 +33,38 @@ body {
 }
 
 /*ROJO*/
-.celeste {
+.red {
  background: #CC0000;
 }
 
-.celeste.light {
+.red.light {
  background: #FFCCCC;
 }
 
 /* AZUL */
-.violeta {
+.blue {
  background: #000099;
 }
 
-.violeta.light {
+.blue.light {
  background: #66B2FF;
 
 }
 
 /* AMARILLO */
-.naranja {
+.yellow {
  background: #FFFF00;
 }
 
-.naranja.light {
+.yellow.light {
  background: #FFFF99;
 }
 
-.verde {
+.green {
  background: #006600;
 }
 
-.verde.light {
+.green.light {
  background: #FFFFCC;
 }
 
@@ -78,6 +78,7 @@ body {
  top: calc(50% - 50px);
  left: calc(50% - 200px);
  border-radius:13px;
+ border-color: black;
  opacity: 0.70;
 }
 
